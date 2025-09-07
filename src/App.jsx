@@ -1,28 +1,20 @@
 import './App.css'
+import Home from './Pages/Home'
+import About from './Pages/About'
+import { Routes } from 'react-router-dom'
+import { Route } from 'react-router-dom'
 import Header from './Components/Header'
 import Footer from './Components/Footer'
-import Images from './Components/Images'
-import Form from './Components/Form'
-import List from './Components/List'
 
 function App() {
   return (
     <>
-      <head>
-
-      </head>
-      <body>
-        {/* {<!-- Cabeçalho -->} */}
-          <Header titulo ="Página em React"/>
-        {/* <!-- Conteudo da pagina --> */}
-        <main>
-          <List titulo="aipim" exibirPrimeiraLista /> 
-          <List titulo="batata"/>
-          <Images/>
-          <Form/>
-        </main>
-        <Footer/>
-      </body>
+      <Header/>
+      <Routes>
+        <Route path='/' element={<Home/>} />
+        <Route path='/about' element={<About/>}/>
+      </Routes>
+      <Footer/>
     </>
   )
 }
